@@ -7,6 +7,13 @@ namespace VisualCSS_DABAO
 {
     class OpenedFile
     {
+
+
+
+
+
+
+
         static public int num = 0;
         static public List<string> names = new List<string>();
         static public List<string> shortnames = new List<string>();
