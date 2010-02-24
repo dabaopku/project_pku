@@ -1,0 +1,46 @@
+﻿<Window x:Class="ThunderStarter.winShortCut"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" Title="添加快捷方式">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54" />
+            <RowDefinition Height="170*" />
+            <RowDefinition Height="30*" />
+        </Grid.RowDefinitions>          
+
+        <Button HorizontalAlignment="Left" Margin="38,4,0,3" Width="75" Grid.Row="2"
+                Click="AddNew" Name="btAdd" IsDefault="True">添加</Button>
+        <Button HorizontalAlignment="Right" Margin="0,4,31,3" Width="75" Grid.Row="2" 
+                Click="Quit" IsCancel="True">取消</Button>
+        <GroupBox Grid.Row="1" Header="描述" Margin="0,5,0,0">
+            <TextBox  Name="txtDetail" Margin="0,5,0,0" AcceptsReturn="True" AcceptsTab="True" AutoWordSelection="True" VerticalScrollBarVisibility="Auto" />
+        </GroupBox>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Foreground="Blue" Margin="2,5,0,0">名称</Label>
+            <TextBox  Name="txtName" Grid.Column="1" Margin="0,5,7,2" /> 
+            <Label  Grid.Row="1" Foreground="Blue" Margin="2,3,0,0">路径</Label>
+            
+            <Grid Grid.Row="1" Grid.Column="1" Margin="0,5,3,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                
+            <TextBox  Name="txtPath"  IsReadOnly="True" >c:\</TextBox>
+            <Button Grid.Column="1" HorizontalAlignment="Right" Width="0" Margin="0,0,2,0" 
+                    Padding="0,-3,0,3" Name="BrowserFile" Click="BrowserFile_Click">...</Button>
+            </Grid> 
+        </Grid>
+    </Grid>
+</Window>
