@@ -140,6 +140,19 @@ namespace ThunderStarter.Properties {
         }
         
         /// <summary>
+        ///   查找类似 SELECT  [Name],[Path],[ShortCut],[Rank]
+        ///FROM TShortCut
+        ///WHERE [Name] In 
+        ///(SELECT  TOP 9 [Name] FROM TShortCut ORDER BY [Rank] DESC , [Name] DESC)
+        ///ORDER BY [Rank] DESC 的本地化字符串。
+        /// </summary>
+        internal static string strTop10 {
+            get {
+                return ResourceManager.GetString("strTop10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 UPDATE TShortCut
         ///SET [{0}]={1}
         ///WHERE [Name]={2} 的本地化字符串。

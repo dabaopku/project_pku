@@ -1,21 +1,31 @@
 ﻿<Window x:Class="ThunderStarter.winStart"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="frmStart" Height="300" Width="300" WindowStartupLocation="CenterScreen"
-        StateChanged="Window_StateChanged" ResizeMode="CanMinimize" Closed="Window_Closed"
-        Loaded="Window_Load" AllowDrop="True" Drop="Window_Drop">
+    Title="雷暴启动" Height="300" Width="300"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Closed="Window_Closed"
+        Loaded="Window_Load"
+        AllowDrop="True"
+        Drop="Window_Drop"
+    StateChanged="Window_StateChanged">
+    
     <Window.ContextMenu>
         <ContextMenu>
             <MenuItem Header="退出" />
             <MenuItem Header="退出" Click="Quit"/>
         </ContextMenu>
     </Window.ContextMenu>
+    
     <Grid>
         <WrapPanel>
             <Button Click="ViewDataBase">查看数据库</Button>
             <Button Click="OptiMizeDataBase">优化数据库</Button>
             <Button Click="CheckDataBase">检查数据库</Button>
             <Button Click="ShowSearch">打开搜索</Button>
+            <TextBlock Name="t1"/>
+            <TextBlock Name="t2"/>
+            
         </WrapPanel>
     </Grid>
 </Window>

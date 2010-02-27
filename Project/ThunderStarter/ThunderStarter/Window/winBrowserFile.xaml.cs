@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using System.Drawing;
 using System.Windows.Media.Imaging;
+using ShortCutLib;
 
 namespace ThunderStarter
 {
@@ -70,7 +71,7 @@ namespace ThunderStarter
         private void TreeNode_Click(object sender, RoutedPropertyChangedEventArgs<object> e)
             //选中结点
         {
-            TreeViewItem item = (TreeViewItem)((TreeView)sender).SelectedItem;
+            TreeViewItem item = (sender as TreeView).SelectedItem as TreeViewItem;
             curPath = (string)item.Tag;
             this.Title = curPath;
             ShowFileInThisDirectory(curPath);
@@ -87,7 +88,8 @@ namespace ThunderStarter
             {
                 Files = Directory.GetFiles(Dir);
             }
-            catch { }
+            catch(IOException) { }
+            catch(UnauthorizedAccessException){}
             foreach (string s in Files)
             {
                 if ( (File.GetAttributes(s) & FileAttributes.Hidden) == FileAttributes.Hidden)
@@ -131,18 +133,91 @@ namespace ThunderStarter
             return retitem;
         }
  
-        ListViewItem NewListItem(string path)
+        ListBoxItem NewListItem(string path)
             //新建文件结点
         {
-            ListViewItem item = new ListViewItem();
+            if (!File.Exists(path))
+                return null;
+
+            ListBoxItem item = new ListBoxItem();
             item.Tag= path;
-          //  Icon ic = new GetSystemIcon().GetIconByFileName(path);
-          //  var im = new System.Windows.Controls.Image();
-          //  var bi = new BitmapImage();
-            
-           item.Content = System.IO.Path.GetFileName(path);
-            return item;
+            //容器
+            StackPanel sp = new StackPanel();
+            sp.Orientation = Orientation.Horizontal;
+            sp.Height = 50;
+            sp.Width = 150;
+            sp.Margin = new Thickness(5, 0, 5, 0);
+
+            //标签
+            TextBlock tb = new TextBlock();
+            tb.TextWrapping = TextWrapping.Wrap;
+            tb.VerticalAlignment = VerticalAlignment.Center;
+            tb.Text = System.IO.Path.GetFileName(path);
+            tb.Margin = new Thickness(3,0,0,0);
+            tb.Width = 110;
+
+            //图标
+            #if f
+string ext = System.IO.Path.GetExtension(path).TrimStart('.');//扩展名
+            string ico = @"./Data/Icons/" + ext + ".bmp";
+            ico = System.IO.Path.GetFullPath(ico);
+
+            if (ext == "lnk" || ext == "exe" || ext == "ico")  //快捷方式 可执行程序 本身是图标
+            {
+                ico = @"./Data/Icons/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".bmp";
+                ico = System.IO.Path.GetFullPath(ico);
+                if (!File.Exists(ico))
+                {
+                    try
+                    {
+                        Icon ic = new GetSystemIcon().GetIconByFileName(path);
+                        Bitmap bm = ic.ToBitmap();
+
+                        bm.Save(ico);
+                    }
+                    catch (Exception ex)
+                    {
+                        Global.ShowError(ex.Message);
+                        return null;
+                    }
+                }
+                    
+            }
+            else
+            {
+                if (!File.Exists(ico))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"./Data/Icons/"))
+                            Directory.CreateDirectory(@"./Data/Icons/");
+                        Icon ic = new GetSystemIcon().GetIconByFileType("." + ext, true);
+                        Bitmap bm = ic.ToBitmap();
+                        bm.Save(ico);
+                    }
+                    catch
+                    {
+                        return null;
+                    }
+                }
+            }
+            //创建图标
+            var image = new System.Windows.Controls.Image();
+            image.Width = 32;
+            image.Height = 32;
+            image.Source = new BitmapImage(new Uri(ico));
+#endif
+            var image = Global.GetIcon(path,32,System.IO.Path.GetFileNameWithoutExtension(path));
+            if (image != null && tb!=null)
+            {
+                sp.Children.Add(image);
+                sp.Children.Add(tb);
+                item.Content = sp;
+                return item;
+            }
+            else return null;
         }
+
         #endregion
 
         private void SelectDirectory(object sender, RoutedEventArgs e)
@@ -205,7 +280,12 @@ namespace ThunderStarter
             //传递文件
         {
             if(treeFile.SelectedItem!=null){
-                curPath = ((ListViewItem)treeFile.SelectedItem).Tag.ToString();
+                curPath = ((ListBoxItem)treeFile.SelectedItem).Tag.ToString();
+                string extension = System.IO.Path.GetExtension(curPath);
+                if (extension == ".lnk")  //快捷方式还原为实际路径
+                {
+                    curPath = Global.GetShortCutTarget(curPath);
+                }
                 Global.DataTransfer = curPath;
             }
             Close();

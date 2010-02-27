@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0FB3CBFA-E5C1-4FB6-ABB7-B333F4C1ACA4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -58,6 +58,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Simplified Chinese Pin-Yin Conversion Library\Simplified Chinese Pin-Yin Conversion Library\ChnCharInfo.dll</HintPath>
     </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependence\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Windows.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>False</Private>
     </Reference>
@@ -106,17 +110,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Window\winBrowserFile.xaml">
+    <Page Include="Controls\NotifyIcon\ctrlNotifyPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window\winShortCut.xaml">
+    <Page Include="Controls\NotifyIcon\ctrlNotifyMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NotifyIcon\ctrlNotifyItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\winBrowserFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window\winSearch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window\winShortCut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window\winShowDataBase.xaml">
       <SubType>Designer</SubType>
@@ -126,7 +146,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window\winTest.xaml">
+    <Page Include="Window\winNotifyBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,17 +154,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Window\winSearch.xaml.cs">
-      <DependentUpon>winSearch.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\CFileInfo.cs" />
     <Compile Include="Class\DataBase.cs" />
     <Compile Include="Class\GetIcon.cs" />
+    <Compile Include="Controls\NotifyIcon\ctrlNotifyIcon.cs" />
+    <Compile Include="Controls\NotifyIcon\ctrlNotifyItem.xaml.cs">
+      <DependentUpon>ctrlNotifyItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyIcon\ctrlNotifyPopup.xaml.cs">
+      <DependentUpon>ctrlNotifyPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyIcon\ctrlNotifyMenu.xaml.cs">
+      <DependentUpon>ctrlNotifyMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window\winBrowserFile.xaml.cs">
       <DependentUpon>winBrowserFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\winSearch.xaml.cs">
+      <DependentUpon>winSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window\winShortCut.xaml.cs">
       <DependentUpon>winShortCut.xaml</DependentUpon>
@@ -170,8 +199,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Window\winTest.xaml.cs">
-      <DependentUpon>winTest.xaml</DependentUpon>
+    <Compile Include="Window\winNotifyBox.xaml.cs">
+      <DependentUpon>winNotifyBox.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -217,9 +246,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Resource Include="Resources\logo.ico">
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="ADODB">

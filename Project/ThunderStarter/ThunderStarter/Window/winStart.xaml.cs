@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Interop;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Windows.Threading;
 
 namespace ThunderStarter
 {
@@ -14,15 +15,50 @@ namespace ThunderStarter
     {
         public winStart()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
  
         private void Window_Load(object sender, RoutedEventArgs e)
             //窗体加载
         {
-            NewNotifyIcon();
             RegisterHotKey();
+            CreateNotifyicon();
         }
+
+        #region 托盘
+
+        private ctrlNotifyIcon notifyicon;
+
+        private void CreateNotifyicon()
+            //创建托盘图标
+        {
+            notifyicon = new ctrlNotifyIcon();
+            notifyicon.Icon.MouseClick += notifyicon_Click;
+            CreateIconMenu();
+        }
+
+        private void notifyicon_Click(object sender, MouseEventArgs e)
+            //显示窗口
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.ShowMe();
+                notifyicon.Menu.HideMenu();
+                notifyicon.Popup.HidePopup();
+            }
+        }
+ 
+        private void CreateIconMenu()
+            //创建菜单
+        {
+            notifyicon.Menu.AddMenuItem("打开主界面\twin+G", ShowMe);
+            notifyicon.Menu.AddMenuItem( "立即搜索\twin+S", ShowSearch);
+            notifyicon.Menu.AddMenuItem( "-", null);
+            notifyicon.Menu.AddMenuItem( "退出程序\tAlt+F4", Quit);
+
+        }
+
+        #endregion
 
         #region OK
 
@@ -31,24 +67,34 @@ namespace ThunderStarter
         private void ViewDataBase(object sender, RoutedEventArgs e)
             //查看数据库
         {
+            this.Cursor = System.Windows.Input.Cursors.Wait;
             DataBase.ShowDataBase();
+            this.Cursor = System.Windows.Input.Cursors.Arrow;
         }
 
         private void OptiMizeDataBase(object sender, RoutedEventArgs e)
             //压缩数据库
         {
+            this.Cursor = System.Windows.Input.Cursors.Wait;
             DataBase.ZipDataBase();
+            this.Cursor = System.Windows.Input.Cursors.Arrow;
         }
 
         private void CheckDataBase(object sender, RoutedEventArgs e)
             //检查数据库无效内容
         {
-            DataTable dt=DataBase.CheckDataBase();
-            if(dt!=null){
+            this.Cursor = System.Windows.Input.Cursors.Wait;
+            DataTable dt = DataBase.CheckDataBase();
+            this.Cursor = System.Windows.Input.Cursors.Arrow;
+            if (dt != null)
+            {
                 winShowDataBase newfrm = new winShowDataBase();
                 newfrm.LoadData(dt);
                 newfrm.ShowDialog();
             }
+            else
+                Global.ShowMessage("恭喜你!数据库正常!", "检查数据库");
+            this.Cursor = System.Windows.Input.Cursors.Arrow;
         }
 
         #endregion
@@ -86,7 +132,6 @@ namespace ThunderStarter
         {
             winSearch search = new winSearch();
             search.Show();
-            //search.Focus();
             search.Activate();
             search.WindowState = WindowState.Normal;
         }
@@ -98,77 +143,23 @@ namespace ThunderStarter
         }
 
         void ShowMe()
-            //Win+G 改变窗口显示状态
+            //Win+G 窗口显示
         {
-            if (!this.IsVisible)
-            {
-                this.Show();
-                this.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = WindowState.Minimized;
-            }
+            this.Show();
+            this.WindowState = WindowState.Normal;
+            this.Activate();
         }
 
         #endregion
  
-        #region 托盘
 
-        NotifyIcon nticon= new NotifyIcon();    //窗体托盘
+ //#region 托盘
 
-        private void Window_StateChanged(object sender, EventArgs e)
-            //窗体最小化,隐藏并显示托盘
-        {
-            if (this.WindowState==WindowState.Minimized)
-            {
-                nticon.Visible = true;
-                this.Hide();
-            }
-            else
-            {
-                nticon.Visible = false;
-                this.Show();
-            }
-        }
-        private void nticon_Click(object sender,MouseEventArgs e)
-            //鼠标单击
-        {
-            if(e.Button==MouseButtons.Left)
-            {
-                nticon.Visible = false;
-                this.Show();
-                this.WindowState = WindowState.Normal;
-            }
-        }
+       
 
-        private ContextMenu cm = new ContextMenu();
-        static private void NewMenuItem(ContextMenu cm,string txt,EventHandler eh)
-        {
-            MenuItem mi = new MenuItem();
-            mi.Text = txt;
-            mi.Click += eh;
-            cm.MenuItems.Add(mi);
-        }
-        private void CreateIconMenu()
-            //创建菜单
-        {
-            NewMenuItem(cm, "打开主界面\twin+G", ShowMe);
-            NewMenuItem(cm, "立即搜索\twin+S", ShowSearch);
-            NewMenuItem(cm, "-", null);
-            NewMenuItem(cm, "退出程序\tAlt+F4", Quit);
 
-        }
-        private void NewNotifyIcon()
-            //初始化托盘图标
-        { 
-            nticon.Icon = ThunderStarter.Properties.Resources.logo;
-            nticon.Visible = false;
-            nticon.Text="疾风启动";
-            CreateIconMenu();
-            nticon.ContextMenu = cm;
-            nticon.MouseClick+=new MouseEventHandler(nticon_Click);
-        }
+ 
+        #region common methods
  
         private void Quit(object sender, RoutedEventArgs e)
             //退出
@@ -181,37 +172,39 @@ namespace ThunderStarter
         {
             Close();
         }
-       
-        private void ShowMe(object sender, EventArgs e)
+
+
+        private void ShowMe(object sender, RoutedEventArgs e)
             //显示主界面
         {
             ShowMe();
         }
-        private void ShowSearch(object sender, EventArgs e)
-        //显示搜索界面
-        {
-            ShowSearch();
-        }
 
-        #endregion
-
+      
         private void Window_Drop(object sender, System.Windows.DragEventArgs e)
-            //拖放文件
+        //拖放文件
         {
             winShortCut newform = new winShortCut(e);
             newform.Show();
         }
+        
+        private void Window_Closed(object sender, EventArgs e)
+        //结束程序
+        {
+            notifyicon.Icon.Dispose();
+            Close();
+        }
 
-
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == WindowState.Minimized)
+            {
+                this.Hide();
+            }
+        }
         #endregion
 
-        private void Window_Closed(object sender, EventArgs e)
-            //结束程序
-        {
-            nticon.Dispose();
-            Close();
-       }
-              
-       
+
+        #endregion        
     }
 }

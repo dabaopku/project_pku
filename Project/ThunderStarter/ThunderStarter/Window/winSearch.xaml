@@ -1,44 +1,97 @@
 ﻿<Window x:Class="ThunderStarter.winSearch"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:form="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-    Title="一键搜索" Height="127" Width="473" ResizeMode="NoResize"
-        Loaded="Window_Load" AllowDrop="True" Drop="Window_Drop" WindowStartupLocation="CenterScreen"
-        PreviewKeyDown="Window_PreviewKeyDown"  Topmost="True">
-    <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*" />
-            <ColumnDefinition Width="198*" MinWidth="81" />
-            <ColumnDefinition Width="109*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="35*" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="31*" />
-        </Grid.RowDefinitions>
-
-        <Border Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" >
-            <Popup Name="PopUp" Placement="Relative" StaysOpen="False" HorizontalOffset="3" MaxHeight="200">
-                <ListBox Width="220" Name="lstMatch" PreviewKeyDown="lstMatch_KeyDown"
-                         PreviewMouseLeftButtonUp="lstMatch_MouseClick">
-                    <ListBox.ContextMenu>
-                        <ContextMenu Padding="0">
-                            <MenuItem Header="打开" Click="MenuItemOpen_Click"/>
-                            <MenuItem Header="修改" Click="MenuItemEdit_Click"/>
-                            <Separator/>
-                            <MenuItem Header="查看数据库" Click="MenuItemShowDatabase_Click"/>
-                            <MenuItem Header="更新数据库" />
-                        </ContextMenu>
-                    </ListBox.ContextMenu>
-                </ListBox>
-            </Popup>
-        </Border>
-
-        <TextBox  Name="txtSearch" Grid.Row="1" Grid.Column="1" 
-                 VerticalContentAlignment="Stretch" 
-                 TextChanged="txtSearch_TextChanged" PreviewKeyDown="txtSearch_KeyDown"
-                  Width="220" >
-        </TextBox>
+    Height="164" Width="453" WindowStyle="None"
+        AllowsTransparency="True" Background="{x:Null}"
+        Loaded="Window_Load" WindowStartupLocation="CenterScreen" Topmost="True"
+        PreviewKeyDown="Escape" AllowDrop="True" Drop="Window_Drop" ShowInTaskbar="False">
+    <Canvas  >
+        
+        <!--框架-->
+        <Path Stroke="DarkGray" StrokeThickness="2"  MouseDown="DragWindow">
+            <Path.Fill>
+                <LinearGradientBrush StartPoint="0.2,0" EndPoint="0.8,1" >
+                    <GradientStop Color="Khaki"  Offset="0"></GradientStop>
+                    <GradientStop Color="LightBlue"  Offset="0.45"></GradientStop>
+                    <GradientStop Color="PaleGreen" Offset="0.7"></GradientStop>
+                    <GradientStop Color="SandyBrown" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Path.Fill>
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="100,20" IsClosed="True">
+                        <LineSegment Point="400,20" />
+                        <ArcSegment Point="420,40" Size="20,20 " SweepDirection="Clockwise"/>
+                        <LineSegment Point="400,100" />
+                        <ArcSegment Point="380,120" Size="20,40 " SweepDirection="Clockwise"/>
+                        <LineSegment Point="80,120"/>
+                        <ArcSegment Point="60,100" Size="20,20 " SweepDirection="Clockwise"/>
+                        <LineSegment Point="80,30"/>
+                        <ArcSegment Point="100,20" Size="20,20 " SweepDirection="Clockwise"/>
+                        <!--<LineSegment Point="50,140" />
+                        <ArcSegment Point="20,120" Size="40,20" SweepDirection="Clockwise" />
+                        <BezierSegment Point1="10,80" Point2="10,35" Point3="70,25"/>
+                        <ArcSegment Point="100,20" Size="80,10 " SweepDirection="Clockwise"/>-->
+                  </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>        
+      
+        <!--关闭按钮-->
+        <Button Canvas.Left="388" Canvas.Top="36" Click="Exit" Height="0" Width="0">
            
-    </Grid>
+            <Button.Template>
+                <ControlTemplate>
+                    <Canvas>
+                        <Rectangle Width="15" Height="15" Stroke="CadetBlue" RadiusX="3" RadiusY="3" Fill="Red"></Rectangle>
+                        <Line X1="3" Y1="3" X2="12" Y2="12" Stroke="Yellow" StrokeThickness="2"></Line>
+                        <Line X1="12" Y1="3" X2="3" Y2="12" Stroke="WhiteSmoke" StrokeThickness="2"></Line>
+                    </Canvas>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!--主体功能键-->
+        <Grid Height="121.326" Width="431">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="106*" />
+                <ColumnDefinition Width="244*" MinWidth="81" />
+                <ColumnDefinition Width="81*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44*" />
+                <RowDefinition Height="22.557*" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="35*" />
+            </Grid.RowDefinitions>
+
+           <!--弹出窗-->
+            <Border Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" >
+                <Popup Name="PopUp" Placement="Relative" StaysOpen="False" HorizontalOffset="0" MaxHeight="200">
+                    <ListBox Name="lstMatch" PreviewKeyDown="lstMatch_KeyDown"
+                         PreviewMouseLeftButtonUp="lstMatch_MouseClick" Width="242">
+                        <ListBox.ContextMenu>
+                            <ContextMenu Padding="0">
+                                <MenuItem Header="打开" Click="MenuItemOpen_Click"/>
+                                <MenuItem Header="修改" Click="MenuItemEdit_Click"/>
+                                <Separator/>
+                                <MenuItem Header="查看数据库" Click="MenuItemShowDatabase_Click"/>
+                                <MenuItem Header="更新数据库" />
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                    </ListBox>
+                </Popup>
+            </Border>
+
+            <!--搜索框-->
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="输入关键词一键启动程序,打开文件,支持拼音" 
+                       MouseDown="DragWindow"/>
+            <TextBox  Name="txtSearch" Grid.Row="2" Grid.Column="1" 
+                 VerticalContentAlignment="Stretch" 
+                 TextChanged="txtSearch_TextChanged" PreviewKeyDown="txtSearch_KeyDown" >
+            </TextBox>
+            <TextBlock Margin="0,2,0,2" Grid.Row="3" Grid.Column="1" Text="拖放文件即可快速添加链接" TextAlignment="Center" MouseDown="DragWindow"/>
+        </Grid>
+        
+    </Canvas>
 </Window>

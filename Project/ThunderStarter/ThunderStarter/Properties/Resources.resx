@@ -157,6 +157,13 @@ FROM TShortCut
 ORDER BY [Rank] DESC</value>
     <comment>显示数据库</comment>
   </data>
+  <data name="strTop10" xml:space="preserve">
+    <value>SELECT  [Name],[Path],[ShortCut],[Rank]
+FROM TShortCut
+WHERE [Name] In 
+(SELECT  TOP 9 [Name] FROM TShortCut ORDER BY [Rank] DESC , [Name] DESC)
+ORDER BY [Rank] DESC</value>
+  </data>
   <data name="strUpdateProperty" xml:space="preserve">
     <value>UPDATE TShortCut
 SET [{0}]={1}

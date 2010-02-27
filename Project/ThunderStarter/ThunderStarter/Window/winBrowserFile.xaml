@@ -17,8 +17,13 @@
             <TreeView Name="treeDirectory" SelectedItemChanged="TreeNode_Click"/>
             <GridSplitter ShowsPreview="True" BorderThickness="1" Width="8"  />
 
-            <ListView Grid.Column="1" Name="treeFile" >
-            </ListView>
+            <ListBox Grid.Column="1" Name="treeFile" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
 
         </Grid>
       
