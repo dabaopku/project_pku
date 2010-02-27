@@ -218,6 +218,40 @@ namespace ThunderStarter
             }
         }
 
+        static public void SelectTop10(System.Windows.Controls.StackPanel sp)
+        //选择常用链接
+        {
+            string sql = ThunderStarter.Properties.Resources.strTop10;
+            DataSet ds = DataBase.ExecuteQuery(sql);
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Hashtable hs = new Hashtable(3);
+                    hs.Add("Name", dr.ItemArray[0] as string);
+                    hs.Add("Path", dr.ItemArray[1] as string);
+                    hs.Add("ShortCut", dr.ItemArray[2] as string);
+                    hs.Add("Rank", (int)dr.ItemArray[3]);
+                    ctrlNotifyItem ni;
+#if R
+ try
+                    {
+#endif
+                    ni = new ctrlNotifyItem(hs);
+#if R
+}
+                    catch
+                    {
+
+                        continue;
+                  
+}
+#endif
+                    sp.Children.Add(ni);
+                }
+            }
+        }
+
         #endregion
 
         #region String        

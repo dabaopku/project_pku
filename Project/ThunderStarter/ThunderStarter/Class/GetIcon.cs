@@ -1,127 +1,103 @@
 ﻿using System;
-using System.IO;
-using System.Drawing;
-using Microsoft.Win32;
-
-
 using System.Runtime.InteropServices;
-
+using System.Drawing;
 
 namespace ThunderStarter
 {
-    /// 
-    /// 提供从操作系统读取图标的方法
-    /// 
-    public class GetSystemIcon
+    public class CGetFileIcon
     {
-        /// 
-        /// 依据文件名读取图标，若指定文件不存在，则返回空值。
-        /// 
-        /// 
-        /// 
-        public Icon GetIconByFileName(string fileName)
+        /// <summary>
+        /// 通过路径获取图标
+        /// </summary>
+        /// <param name="path">文件或文件夹路径</param>
+        /// <returns>获取的图标</returns>
+        public static Icon GetLargeIcon(string path)
         {
-            if (fileName == null || fileName.Equals(string.Empty)) return null;
-            if (!File.Exists(fileName)) return null;
-
-            SHFILEINFO shinfo = new SHFILEINFO();
-            //Use this to get the small Icon
-            Win32.SHGetFileInfo(fileName, 0, ref shinfo, (uint)Marshal.SizeOf(shinfo), Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON);
-            //The icon is returned in the hIcon member of the shinfo struct
-            System.Drawing.Icon myIcon = System.Drawing.Icon.FromHandle(shinfo.hIcon);
-            return myIcon;
+            return GetIcon(path, FileInfo.GetFileInfoFlags.SHGFI_LARGEICON);
         }
-
-        /// 
-        /// 给出文件扩展名（.*），返回相应图标
-        /// 若不以"."开头则返回文件夹的图标。
-        /// 
-        /// 
-        /// 
-        /// 
-        public Icon GetIconByFileType(string fileType, bool isLarge)
+        public static Icon GetSmallIcon(string path)
         {
-            if (fileType == null || fileType.Equals(string.Empty)) return null;
+            return GetIcon(path, FileInfo.GetFileInfoFlags.SHGFI_SMALLICON);
+        }
+        private static Icon GetIcon(string path,FileInfo.GetFileInfoFlags type)
+        {
+            FileInfo.FileInfomation _info = new FileInfo.FileInfomation();
+            FileInfo.GetFileInfo(path, 0, ref _info, Marshal.SizeOf(_info),
+                (int)(FileInfo.GetFileInfoFlags.SHGFI_ICON | type));
 
-            RegistryKey regVersion = null;
-            string regFileType = null;
-            string regIconString = null;
-            string systemDirectory = Environment.SystemDirectory + "\\";
-
-            if (fileType[0] == '.')
-            {
-                //读系统注册表中文件类型信息
-                regVersion = Registry.ClassesRoot.OpenSubKey(fileType, true);
-                if (regVersion != null)
-                {
-                    regFileType = regVersion.GetValue("") as string;
-                    regVersion.Close();
-                    regVersion = Registry.ClassesRoot.OpenSubKey(regFileType + @"\DefaultIcon", true);
-                    if (regVersion != null)
-                    {
-                        regIconString = regVersion.GetValue("") as string;
-                        regVersion.Close();
-                    }
-                }
-                if (regIconString == null)
-                {
-                    //没有读取到文件类型注册信息，指定为未知文件类型的图标
-                    regIconString = systemDirectory + "shell32.dll,0";
-                }
-            }
-            else
-            {
-                //直接指定为文件夹图标
-                regIconString = systemDirectory + "shell32.dll,3";
-            }
-            string[] fileIcon = regIconString.Split(new char[] { ',' });
-            if (fileIcon.Length != 2)
-            {
-                //系统注册表中注册的标图不能直接提取，则返回可执行文件的通用图标
-                fileIcon = new string[] { systemDirectory + "shell32.dll", "2" };
-            }
-            Icon resultIcon = null;
             try
             {
-                //调用API方法读取图标
-                int[] phiconLarge = new int[1];
-                int[] phiconSmall = new int[1];
-                uint count = Win32.ExtractIconEx(fileIcon[0], Int32.Parse(fileIcon[1]), phiconLarge, phiconSmall, 1);
-                IntPtr IconHnd = new IntPtr(isLarge ? phiconLarge[0] : phiconSmall[0]);
-                resultIcon = Icon.FromHandle(IconHnd);
+                return Icon.FromHandle(_info.hIcon);
             }
-            catch { }
-            return resultIcon;
+            catch
+            {
+                return null;
+            }
         }
     }
-
-
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct SHFILEINFO
+    
+    /// <summary>
+    /// 获取文件系统中对象的信息，例如：文件、文件夹、驱动器根目录
+    /// </summary>
+    public class FileInfo
     {
-        public IntPtr hIcon;
-        public IntPtr iIcon;
-        public uint dwAttributes;
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
-        public string szDisplayName;
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)]
-        public string szTypeName;
-    };
+        [DllImport("shell32.dll", EntryPoint = "SHGetFileInfo")]
+        public static extern int GetFileInfo(string pszPath, int dwFileAttributes, ref FileInfomation psfi, int cbFileInfo, int uFlags);
 
-    /// 
-    /// 定义调用的API方法
-    /// 
-    class Win32
-    {
-        public const uint SHGFI_ICON = 0x100;
-        public const uint SHGFI_LARGEICON = 0x0; // 'Large icon
-        public const uint SHGFI_SMALLICON = 0x1; // 'Small icon
+        private FileInfo() { }
 
-        [DllImport("shell32.dll")]
-        public static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbSizeFileInfo, uint uFlags);
-        [DllImport("shell32.dll")]
-        public static extern uint ExtractIconEx(string lpszFile, int nIconIndex, int[] phiconLarge, int[] phiconSmall, uint nIcons);
+        [StructLayout(LayoutKind.Sequential)]
+        public struct FileInfomation
+        {
+            public IntPtr hIcon;
+            public int iIcon;
+            public int dwAttributes;
 
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+            public string szDisplayName;
+
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)]
+            public string szTypeName;
+        }
+
+        public enum FileAttributeFlags : int
+        {
+            FILE_ATTRIBUTE_READONLY = 0x00000001,
+            FILE_ATTRIBUTE_HIDDEN = 0x00000002,
+            FILE_ATTRIBUTE_SYSTEM = 0x00000004,
+            FILE_ATTRIBUTE_DIRECTORY = 0x00000010,
+            FILE_ATTRIBUTE_ARCHIVE = 0x00000020,
+            FILE_ATTRIBUTE_DEVICE = 0x00000040,
+            FILE_ATTRIBUTE_NORMAL = 0x00000080,
+            FILE_ATTRIBUTE_TEMPORARY = 0x00000100,
+            FILE_ATTRIBUTE_SPARSE_FILE = 0x00000200,
+            FILE_ATTRIBUTE_REPARSE_POINT = 0x00000400,
+            FILE_ATTRIBUTE_COMPRESSED = 0x00000800,
+            FILE_ATTRIBUTE_OFFLINE = 0x00001000,
+            FILE_ATTRIBUTE_NOT_CONTENT_INDEXED = 0x00002000,
+            FILE_ATTRIBUTE_ENCRYPTED = 0x00004000
+        }
+
+        public enum GetFileInfoFlags : int
+        {
+            SHGFI_ICON = 0x000000100,     // get icon
+            SHGFI_DISPLAYNAME = 0x000000200,     // get display name
+            SHGFI_TYPENAME = 0x000000400,     // get type name
+            SHGFI_ATTRIBUTES = 0x000000800,     // get attributes
+            SHGFI_ICONLOCATION = 0x000001000,     // get icon location
+            SHGFI_EXETYPE = 0x000002000,     // return exe type
+            SHGFI_SYSICONINDEX = 0x000004000,     // get system icon index
+            SHGFI_LINKOVERLAY = 0x000008000,     // put a link overlay on icon
+            SHGFI_SELECTED = 0x000010000,     // show icon in selected state
+            SHGFI_ATTR_SPECIFIED = 0x000020000,     // get only specified attributes
+            SHGFI_LARGEICON = 0x000000000,     // get large icon
+            SHGFI_SMALLICON = 0x000000001,     // get small icon
+            SHGFI_OPENICON = 0x000000002,     // get open icon
+            SHGFI_SHELLICONSIZE = 0x000000004,     // get shell size icon
+            SHGFI_PIDL = 0x000000008,     // pszPath is a pidl
+            SHGFI_USEFILEATTRIBUTES = 0x000000010,     // use passed dwFileAttribute
+            SHGFI_ADDOVERLAYS = 0x000000020,     // apply the appropriate overlays
+            SHGFI_OVERLAYINDEX = 0x000000040     // Get the index of the overlay
+        }
     }
 }
