@@ -1,0 +1,14 @@
+11
+add 1
+add 1
+ask 1
+del 2
+ask 2
+del 2
+del 1
+ask 1
+add 1
+ask 1
+add 1
+
+
