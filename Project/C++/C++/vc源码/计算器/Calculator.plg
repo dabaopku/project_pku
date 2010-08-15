@@ -1,0 +1,70 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Calculator - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/Calculator.res" /d "_DEBUG" /d "_AFXDLL" "E:\VC++\test\Calculator\Calculator\Calculator.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/Calculator.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VC++\test\Calculator\Calculator\Calculator.cpp"
+"E:\VC++\test\Calculator\Calculator\CalculatorDlg.cpp"
+"E:\VC++\test\Calculator\Calculator\QiuXpButton.cpp"
+"E:\VC++\test\Calculator\Calculator\QiuXpEdit.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP3.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VC++\test\Calculator\Calculator\CExpress.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP3.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/Calculator.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VC++\test\Calculator\Calculator\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP4.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Calculator.pdb" /debug /machine:I386 /out:"Debug/Calculator.exe" /pdbtype:sept 
+".\Debug\Calculator.obj"
+".\Debug\CalculatorDlg.obj"
+".\Debug\CExpress.obj"
+".\Debug\QiuXpButton.obj"
+".\Debug\QiuXpEdit.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Calculator.res"
+".\DETOURS.lib"
+".\SkinMagicLib.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Calculator.cpp
+CalculatorDlg.cpp
+QiuXpButton.cpp
+QiuXpEdit.cpp
+Generating Code...
+Compiling...
+CExpress.cpp
+Linking...
+LINK : warning LNK4098: defaultlib "MSVCRT" conflicts with use of other libs; use /NODEFAULTLIB:library
+msvcrtd.lib(cinitexe.obj) : warning LNK4098: defaultlib "libc.lib" conflicts with use of other libs; use /NODEFAULTLIB:library
+Creating command line "bscmake.exe /nologo /o"Debug/Calculator.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\Calculator.sbr" ".\Debug\CalculatorDlg.sbr" ".\Debug\CExpress.sbr" ".\Debug\QiuXpButton.sbr" ".\Debug\QiuXpEdit.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+Calculator.exe - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>

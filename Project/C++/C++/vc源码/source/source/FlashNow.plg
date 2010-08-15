@@ -1,0 +1,108 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: FlashNow - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/FlashNow.res" /d "NDEBUG" "G:\storage\private\projects\flashnow\source\FlashNow.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP105.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/FlashNow.pch" /YX /Fo"Release/" /Fd"Release/" /FD /NODEFAULTLIB:libc.lib /c 
+"G:\storage\private\projects\flashnow\source\2HtmlDlg.cpp"
+"G:\storage\private\projects\flashnow\source\BrowserFolder.cpp"
+"G:\storage\private\projects\flashnow\source\BrowserFrame.cpp"
+"G:\storage\private\projects\flashnow\source\BrowserList.cpp"
+"G:\storage\private\projects\flashnow\source\DropDownToolBar.cpp"
+"G:\storage\private\projects\flashnow\source\FileOpenDlg.cpp"
+"G:\storage\private\projects\flashnow\source\FlashNow.cpp"
+"G:\storage\private\projects\flashnow\source\FlashOCX.cpp"
+"G:\storage\private\projects\flashnow\source\FlashToolBar.cpp"
+"G:\storage\private\projects\flashnow\source\FlashWnd.cpp"
+"G:\storage\private\projects\flashnow\source\FormBar.cpp"
+"G:\storage\private\projects\flashnow\source\History.cpp"
+"G:\storage\private\projects\flashnow\source\LogoBar.cpp"
+"G:\storage\private\projects\flashnow\source\NavigatorToolBar.cpp"
+"G:\storage\private\projects\flashnow\source\ProgressStatusBar.cpp"
+"G:\storage\private\projects\flashnow\source\PropertyDlg.cpp"
+"G:\storage\private\projects\flashnow\source\SetUpDlg.cpp"
+"G:\storage\private\projects\flashnow\source\Shell.cpp"
+"G:\storage\private\projects\flashnow\source\ShellList.cpp"
+"G:\storage\private\projects\flashnow\source\ShellTree.cpp"
+"G:\storage\private\projects\flashnow\source\ShockwaveFlash.cpp"
+"G:\storage\private\projects\flashnow\source\StdAfx.cpp"
+"G:\storage\private\projects\flashnow\source\ViewerClient.cpp"
+"G:\storage\private\projects\flashnow\source\ViewerFrame.cpp"
+"G:\storage\private\projects\flashnow\source\ViewerToolBar.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP105.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP106.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/FlashNow.pdb" /machine:I386 /out:"Release/FlashNow.exe" 
+.\Release\2HtmlDlg.obj
+.\Release\BrowserFolder.obj
+.\Release\BrowserFrame.obj
+.\Release\BrowserList.obj
+.\Release\DropDownToolBar.obj
+.\Release\FileOpenDlg.obj
+.\Release\FlashNow.obj
+.\Release\FlashOCX.obj
+.\Release\FlashToolBar.obj
+.\Release\FlashWnd.obj
+.\Release\FormBar.obj
+.\Release\History.obj
+.\Release\LogoBar.obj
+.\Release\NavigatorToolBar.obj
+.\Release\ProgressStatusBar.obj
+.\Release\PropertyDlg.obj
+.\Release\SetUpDlg.obj
+.\Release\Shell.obj
+.\Release\ShellList.obj
+.\Release\ShellTree.obj
+.\Release\ShockwaveFlash.obj
+.\Release\StdAfx.obj
+.\Release\ViewerClient.obj
+.\Release\ViewerFrame.obj
+.\Release\ViewerToolBar.obj
+.\Release\FlashNow.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP106.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+Command line warning D4002 : ignoring unknown option '/NODEFAULTLIB:libc.lib'
+2HtmlDlg.cpp
+BrowserFolder.cpp
+BrowserFrame.cpp
+BrowserList.cpp
+DropDownToolBar.cpp
+FileOpenDlg.cpp
+FlashNow.cpp
+FlashOCX.cpp
+FlashToolBar.cpp
+FlashWnd.cpp
+FormBar.cpp
+History.cpp
+LogoBar.cpp
+NavigatorToolBar.cpp
+ProgressStatusBar.cpp
+PropertyDlg.cpp
+SetUpDlg.cpp
+Shell.cpp
+ShellList.cpp
+ShellTree.cpp
+ShockwaveFlash.cpp
+StdAfx.cpp
+ViewerClient.cpp
+ViewerFrame.cpp
+ViewerToolBar.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+FlashNow.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

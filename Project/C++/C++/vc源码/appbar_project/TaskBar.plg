@@ -1,0 +1,56 @@
+--------------------Configuration: TaskBar - Win32 Debug--------------------
+Begining build with project "C:\Projects\TaskBar\TaskBar.dsp", at root.
+Active configuration is Win32 (x86) Application (based on Win32 (x86) Application)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /MDd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/TaskBar.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c "
+			"OLE Type Library Maker" with flags "/nologo /D "_DEBUG" /mktyplib203 /o NUL /win32 "
+			"Win32 Resource Compiler" with flags "/l 0x409 /fo"Debug/TaskBar.res" /d "_DEBUG" /d "_AFXDLL" "
+			"Browser Database Maker" with flags "/nologo /o"Debug/TaskBar.bsc" "
+			"COFF Linker for 80x86" with flags "/nologo /subsystem:windows /incremental:yes /pdb:"Debug/TaskBar.pdb" /debug /machine:I386 /out:"Debug/TaskBar.exe" /pdbtype:sept "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating command line "rc.exe /l 0x409 /fo"Debug/TaskBar.res" /d "_DEBUG" /d "_AFXDLL" "C:\Projects\TaskBar\TaskBar.rc"" 
+Creating temp file "C:\TEMP\RSP154.tmp" with contents </nologo /MDd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/TaskBar.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Projects\TaskBar\ApBarDlg.cpp"
+"C:\Projects\TaskBar\AppBar.cpp"
+"C:\Projects\TaskBar\Controls.cpp"
+"C:\Projects\TaskBar\LogMsg.cpp"
+"C:\Projects\TaskBar\TaskBar.cpp"
+"C:\Projects\TaskBar\TaskBarDlg.cpp"
+"C:\Projects\TaskBar\Utility.cpp"
+>
+Creating command line "cl.exe @C:\TEMP\RSP154.tmp" 
+Creating temp file "C:\TEMP\RSP155.tmp" with contents </nologo /MDd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/TaskBar.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Projects\TaskBar\StdAfx.cpp"
+>
+Creating command line "cl.exe @C:\TEMP\RSP155.tmp" 
+Creating temp file "C:\TEMP\RSP156.tmp" with contents </nologo /subsystem:windows /incremental:yes /pdb:"Debug/TaskBar.pdb" /debug /machine:I386 /out:"Debug/TaskBar.exe" /pdbtype:sept 
+.\Debug\ApBarDlg.obj
+.\Debug\AppBar.obj
+.\Debug\Controls.obj
+.\Debug\LogMsg.obj
+.\Debug\StdAfx.obj
+.\Debug\TaskBar.obj
+.\Debug\TaskBarDlg.obj
+.\Debug\Utility.obj
+.\Debug\TaskBar.res>
+Creating command line "link.exe @C:\TEMP\RSP156.tmp" 
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ApBarDlg.cpp
+AppBar.cpp
+Controls.cpp
+LogMsg.cpp
+TaskBar.cpp
+TaskBarDlg.cpp
+Utility.cpp
+Generating Code...
+Linking...
+
+
+
+TaskBar.exe - 0 error(s), 0 warning(s)

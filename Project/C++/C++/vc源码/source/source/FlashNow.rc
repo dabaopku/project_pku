@@ -1,0 +1,735 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FlashNow.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CAPTION             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDR_BROWSER             BITMAP  MOVEABLE PURE   "res\\browser.bmp"
+IDR_FLASH               BITMAP  MOVEABLE PURE   "res\\flash.bmp"
+IDR_VIEWER              BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_BROWSER TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_MOVIE_VIEW
+    SEPARATOR
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_VIEW_BACK
+    BUTTON      ID_VIEW_NEXT
+    BUTTON      ID_FILE_UP
+    SEPARATOR
+    BUTTON      ID_VIEW_THUMBNAILS
+    BUTTON      ID_VIEW_LARGEICON
+    BUTTON      ID_VIEW_SMALLICON
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_DETAILS
+    BUTTON      ID_VIEW_REFRESH
+    SEPARATOR
+    BUTTON      ID_FILE_RENAME
+    BUTTON      ID_FILE_DELETE
+    BUTTON      ID_FILE_PROPERTY
+    SEPARATOR
+    BUTTON      ID_TOOL_SETUP
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_FLASH TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_MOVIE_PLAY
+    BUTTON      ID_MOVIE_STOP
+    BUTTON      ID_FRAME_REWIND
+    BUTTON      ID_FRAME_BACK
+    BUTTON      ID_FRAME_FORWARD
+    BUTTON      ID_FRAME_END
+    SEPARATOR
+    BUTTON      ID_ZOOM_IN
+    BUTTON      ID_ZOOM_OUT
+    BUTTON      ID_ACTUAL_SIZE
+    BUTTON      ID_SHOW_ALL
+    BUTTON      ID_EXACT_IT
+    BUTTON      ID_FULL_SCREEN
+    SEPARATOR
+    BUTTON      ID_BACK_COLOR
+    BUTTON      ID_MOVIE_LOOP
+    BUTTON      ID_MOVIE_QUALITY
+END
+
+IDR_VIEWER TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_MOVIE_BROWSE
+    SEPARATOR
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE_NOW
+    BUTTON      ID_FILE_EXPORT_HTML
+    BUTTON      ID_FILE_PROPERTY
+    SEPARATOR
+    BUTTON      ID_SLIDE_SHOW
+    BUTTON      ID_MOVIE_BACK
+    BUTTON      ID_MOVIE_FORWARD
+    SEPARATOR
+    BUTTON      ID_TOOL_SETUP
+    BUTTON      ID_SCREEN_CAPTURE
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_BROWSER MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "视图模式(&V)",                ID_MOVIE_VIEW
+        MENUITEM SEPARATOR
+        MENUITEM "打开(&O)",                    ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "后退(&B)",                    ID_VIEW_BACK
+        MENUITEM "前进(&N)",                    ID_VIEW_NEXT
+        MENUITEM "上一级目录(&U)",              ID_FILE_UP
+        MENUITEM "更改文件名(&R)",              ID_FILE_RENAME
+        MENUITEM "删除(&D)\tDelete",            ID_FILE_DELETE
+        MENUITEM "文件名序列化(&S)...",         ID_FILE_SERIALIZE
+        MENUITEM SEPARATOR
+        MENUITEM "文件属性(&P)...",             ID_FILE_PROPERTY
+        MENUITEM "系统设置(&S)...",             ID_TOOL_SETUP
+        MENUITEM "注册SWFlash控件(中文版)",     ID_OCX_REGISTER
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "拇指图显示(&N)",              ID_VIEW_THUMBNAIL
+        MENUITEM "大图标显示(&L)",              ID_VIEW_LARGEICON
+        MENUITEM "小图标显示(&S)",              ID_VIEW_SMALLICON
+        MENUITEM "列表显示(&L)",                ID_VIEW_LIST
+        MENUITEM "详细资料显示(&D)",            ID_VIEW_DETAILS
+        MENUITEM SEPARATOR
+        MENUITEM "刷新(&R)\tF5",                ID_VIEW_REFRESH
+        MENUITEM "显示隐藏文件(&H)",            ID_VIEW_HIDDEN_FILES
+        MENUITEM "仅显示动画文件(&O)",          ID_VIEW_FLASH_ONLY
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助手册(&M)...",             ID_HELP_MANUAL
+        MENUITEM SEPARATOR
+        MENUITEM "发送用户建议(&S)...",         ID_SEND_SUGGESTION
+        MENUITEM "关于 FlashNow! (&A)...",      ID_APP_ABOUT
+    END
+END
+
+IDM_VIEWER MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "浏览模式(&B)\tF6",            ID_MOVIE_BROWSE
+        MENUITEM SEPARATOR
+        MENUITEM "打开(&O)...\tF3",             ID_FILE_OPEN
+        POPUP "导出"
+        BEGIN
+            MENUITEM "Flash动画文件(&F)...\tCtrl+S", ID_FILE_EXPORT_FLASH
+            MENUITEM SEPARATOR
+            MENUITEM "HTML文件(&H)...",             ID_FILE_EXPORT_HTML
+            MENUITEM "屏幕保护程序(&S)...",         ID_FILE_EXPORT_SCREEN_SAVER
+
+            MENUITEM "FlashNow! 应用程序...",       ID_FILE_EXPORT_FLASHNOW
+            MENUITEM "FlashPlayer应用程序...",      ID_FILE_EXPORT_FLASHPLAYER
+
+        END
+        MENUITEM "快速保存(&N)\tF2",            ID_FILE_SAVE_NOW
+        MENUITEM SEPARATOR
+        MENUITEM "上一副动画(&B)\tPage Up",     ID_MOVIE_BACK
+        MENUITEM "下一幅动画(&F)\tPage Down",   ID_MOVIE_FORWARD
+        MENUITEM "第一副动画(&H)\tCtrl+Page Up", ID_MOVIE_HEAD
+        MENUITEM "最后一副动画(&T)\tCtrl+Page Down", ID_MOVIE_TAIL
+        MENUITEM SEPARATOR
+        MENUITEM "文件属性(&P)...",             ID_FILE_PROPERTY
+        MENUITEM "系统设置(&S)...",             ID_TOOL_SETUP
+        MENUITEM "Flash屏幕抓取(&C)\tF9",       ID_SCREEN_CAPTURE
+        MENUITEM "注册SWFlash控件(中文版)",     ID_OCX_REGISTER
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "控制(&M)"
+    BEGIN
+        MENUITEM "播放(&P)\tCtrl+P",            ID_MOVIE_PLAY
+        MENUITEM "停止(&S)\tCtrl+S",            ID_MOVIE_STOP
+        MENUITEM "首帧(&R)\tCtrl+Home",         ID_FRAME_REWIND
+        MENUITEM "尾帧(&E)\tCtrl+End",          ID_FRAME_END
+        MENUITEM "上一帧(&B)",                  ID_FRAME_BACK
+        MENUITEM "下一帧(&F)",                  ID_FRAME_FORWARD
+        MENUITEM SEPARATOR
+        MENUITEM "放大(&I)\tCtrl+Down",         ID_ZOOM_IN
+        MENUITEM "缩小(&O)\tCtrl+Up",           ID_ZOOM_OUT
+        MENUITEM "实际尺寸(A)\tF12",            ID_ACTUAL_SIZE
+        MENUITEM SEPARATOR
+        MENUITEM "循环播放(&L)",                ID_MOVIE_LOOP
+        POPUP "画面质量"
+        BEGIN
+            MENUITEM "低",                          ID_LOW_QUALITY
+            MENUITEM "中",                          ID_MEDIUM_QUALITY
+            MENUITEM "高",                          ID_HIGH_QUALITY
+        END
+        MENUITEM "设置背景色(&G)...",           ID_BACK_COLOR
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "全部显示",                    ID_SHOW_ALL
+        MENUITEM "拉伸显示",                    ID_EXACT_IT
+        MENUITEM "全屏\tF11",                   ID_FULL_SCREEN
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助手册(&M)...",             ID_HELP_MANUAL
+        MENUITEM SEPARATOR
+        MENUITEM "发送用户建议(&S)...",         ID_SEND_SUGGESTION
+        MENUITEM "关于 FlashNow! (&A)...",      ID_APP_ABOUT
+        MENUITEM "FlashNow! 产品介绍(&P)",      ID_HELP_PRODUCT
+    END
+END
+
+IDM_QUALITY_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "Quality"
+    BEGIN
+        MENUITEM "低",                          ID_LOW_QUALITY
+        MENUITEM "中",                          ID_MEDIUM_QUALITY
+        MENUITEM "高",                          ID_HIGH_QUALITY
+    END
+END
+
+IDM_NAVIGATOR_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "Navigator"
+    BEGIN
+        MENUITEM "Folder List...",              65280
+    END
+END
+
+IDM_LIST_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "List"
+    BEGIN
+        POPUP "查看(&V)"
+        BEGIN
+            MENUITEM "拇指图显示(&N)",              ID_VIEW_THUMBNAIL
+            MENUITEM "大图标显示(&L)",              ID_VIEW_LARGEICON
+            MENUITEM "小图标显示(&S)",              ID_VIEW_SMALLICON
+            MENUITEM "列表显示(&L)",                ID_VIEW_LIST
+            MENUITEM "详细资料显示(&D)",            ID_VIEW_DETAILS
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "后退(&B)",                    ID_VIEW_BACK
+        MENUITEM "前进(&N)",                    ID_VIEW_NEXT
+        MENUITEM "上一级目录(&U)",              ID_FILE_UP
+        MENUITEM SEPARATOR
+        MENUITEM "刷新(&R)",                    ID_VIEW_REFRESH
+        MENUITEM "显示隐藏文件(&H)",            ID_VIEW_HIDDEN_FILES
+        MENUITEM "仅显示动画文件(&O)",          ID_VIEW_FLASH_ONLY
+        MENUITEM SEPARATOR
+        MENUITEM "文件名序列化(&S)...",         ID_FILE_SERIALIZE
+    END
+END
+
+IDM_EXPORT_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "Export"
+    BEGIN
+        MENUITEM "Flash动画文件(&F)...\tCtrl+S", ID_FILE_EXPORT_FLASH
+        MENUITEM SEPARATOR
+        MENUITEM "屏幕保护程序(&S)...",         ID_FILE_EXPORT_SCREEN_SAVER
+        MENUITEM "FlashNow! 应用程序...",       ID_FILE_EXPORT_FLASHNOW
+        MENUITEM "FlashPlayer应用程序...",      ID_FILE_EXPORT_FLASHPLAYER
+    END
+END
+
+IDM_ITEM_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "Item"
+    BEGIN
+        MENUITEM "打开(&O)",                    ID_FILE_OPEN
+        MENUITEM "更改文件名(&R)",              ID_FILE_RENAME
+        MENUITEM "删除(&D)\tDelete",            ID_FILE_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "文件属性(&P)...",             ID_FILE_PROPERTY
+    END
+END
+
+IDM_SAVEPATH_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "Save Path"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "选择保存路径...",             ID_FILE_EXPORT_FLASH
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDA_FLASHNOW ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "P",            ID_MOVIE_PLAY,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_MOVIE_STOP,          VIRTKEY, CONTROL, NOINVERT
+    VK_DOWN,        ID_ZOOM_IN,             VIRTKEY, CONTROL, NOINVERT
+    VK_END,         ID_FRAME_END,           VIRTKEY, CONTROL, NOINVERT
+    VK_ESCAPE,      ID_END_FULL_SCREEN,     VIRTKEY, NOINVERT
+    VK_F11,         ID_FULL_SCREEN,         VIRTKEY, NOINVERT
+    VK_F12,         ID_ACTUAL_SIZE,         VIRTKEY, NOINVERT
+    VK_F2,          ID_FILE_SAVE_NOW,       VIRTKEY, NOINVERT
+    VK_F3,          ID_FILE_OPEN,           VIRTKEY, NOINVERT
+    VK_F6,          ID_MOVIE_BROWSE,        VIRTKEY, NOINVERT
+    VK_HOME,        ID_FRAME_REWIND,        VIRTKEY, CONTROL, NOINVERT
+    VK_LEFT,        ID_ZOOM_OUT,            VIRTKEY, CONTROL, NOINVERT
+    VK_NEXT,        ID_MOVIE_FORWARD,       VIRTKEY, NOINVERT
+    VK_NEXT,        ID_MOVIE_TAIL,          VIRTKEY, CONTROL, NOINVERT
+    VK_PRIOR,       ID_MOVIE_BACK,          VIRTKEY, NOINVERT
+    VK_PRIOR,       ID_MOVIE_HEAD,          VIRTKEY, CONTROL, NOINVERT
+    VK_RIGHT,       ID_ZOOM_IN,             VIRTKEY, CONTROL, NOINVERT
+    VK_UP,          ID_ZOOM_OUT,            VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 252, 164
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "FlashNow! 1.05.20演示版",IDC_STATIC,15,132,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2002 青春工作室",IDC_STATIC,15,142,119,8
+    GROUPBOX        "",IDC_STATIC,7,122,238,35
+    CONTROL         "",IDC_CONTAINER,"Static",SS_BLACKFRAME | WS_BORDER,7,7,
+                    238,112
+    CONTROL         "启动程序时显示",IDC_SHOW_ABOUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,169,140,69,10
+END
+
+IDD_2HTML DIALOG DISCARDABLE  0, 0, 302, 241
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HTML输出"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,244,220,50,14
+    EDITTEXT        IDC_HTML_CODE,7,17,288,172,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_VSCROLL
+    LTEXT           "HTML代码输出:",IDC_STATIC,7,5,53,8
+    DEFPUSHBUTTON   "预览(&P)",ID_HTML_PREVIEW,118,220,50,14
+    DEFPUSHBUTTON   "保存(&S)...",ID_HTML_SAVE,181,220,50,14
+    DEFPUSHBUTTON   "复制至剪贴板(&C)",ID_HTML_COPY,7,220,98,14
+    LTEXT           "页面标题",IDC_STATIC,8,199,33,8
+    EDITTEXT        IDC_HTML_TITLE,46,196,160,14,ES_AUTOHSCROLL
+    CONTROL         "使用文件绝对路径",IDC_MOVIE_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,218,198,77,10
+END
+
+IDD_FILE_OPEN DIALOG DISCARDABLE  0, 0, 291, 129
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "",IDC_MOVIE_PATH,5,113,279,8
+    CONTROL         "",IDC_PREVIEW_SCREEN,"Static",SS_BLACKFRAME | WS_BORDER,
+                    4,7,279,99
+END
+
+IDD_PROPERTY DIALOG DISCARDABLE  0, 0, 221, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文件属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,85,96,50,14
+    LTEXT           "文 件 名:",IDC_STATIC,13,71,37,8
+    LTEXT           "文件大小:",IDC_STATIC,13,15,37,8
+    LTEXT           "创建时间:",IDC_STATIC,13,29,37,8
+    LTEXT           "修改时间:",IDC_STATIC,13,43,37,8
+    LTEXT           "总 帧 数:",IDC_STATIC,13,57,37,8
+    LTEXT           "<filesize>",IDC_FILESIZE,51,15,152,9
+    LTEXT           "<createtime>",IDC_CREATETIME,51,29,152,9
+    LTEXT           "<modifytime>",IDC_MODIFYTIME,51,43,152,9
+    LTEXT           "<totalframes>",IDC_TOTALFRAMES,51,57,152,9
+    EDITTEXT        IDC_FILENAME,51,71,158,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+END
+
+IDD_SETUP DIALOG DISCARDABLE  0, 0, 225, 237
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "系统设置"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "允许使用鼠标双击实现全屏切换",IDC_DOUBLECLICK_ENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,35,128,10
+    CONTROL         "循环播放",IDC_MOVIE_LOOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,49,48,10
+    CONTROL         "HTML输出使用绝对文件路径",IDC_MOVIE_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,21,111,10
+    EDITTEXT        IDC_ELAPSE,156,61,54,14,ES_AUTOHSCROLL
+    CONTROL         "顺序播放",IDC_SLIDE_SHOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,63,48,10
+    LTEXT           "间隔时间(ms)",IDC_STATIC,98,65,49,8
+    GROUPBOX        "参数设置",IDC_STATIC,7,9,211,76
+    GROUPBOX        "地址列表",IDC_STATIC,7,89,211,108
+    LISTBOX         IDC_URL_LIST,16,100,194,75,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删除地址项(&D)",IDC_DELETE_ITEM,129,179,81,14
+    PUSHBUTTON      "清空所有项(&A)",IDC_CLEAR_ALL,16,179,81,14
+    GROUPBOX        "",IDC_STATIC,7,196,211,26
+    DEFPUSHBUTTON   "确定(&O)",IDOK,99,204,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,160,204,50,14
+    CONTROL         "启动程序时显示About窗口",IDC_SHOW_ABOUT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,98,49,103,10
+END
+
+IDD_VIEWER DIALOG DISCARDABLE  0, 0, 488, 18
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "地址",IDC_STATIC,3,4,18,8
+    COMBOBOX        IDC_URL_LIST,26,2,224,120,CBS_DROPDOWN | CBS_AUTOHSCROLL | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "播放进度",IDC_STATIC,258,5,34,8
+    CONTROL         "",IDC_FRAME_SLIDER,"msctls_trackbar32",WS_TABSTOP,292,3,
+                    195,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+    END
+
+    IDD_SETUP, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_VIEWER, DIALOG
+    BEGIN
+        RIGHTMARGIN, 487
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_VIEWER              ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_BROWSER             ICON    DISCARDABLE     "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ShockwaveFlash 动画浏览器"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+    ID_INDICATOR_LOADED     "0                                             "
+    ID_INDICATOR_CURRENTFRAME " 当前帧:      0 "
+    ID_INDICATOR_FRAMES     " 总帧数:      0 "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "导出为Flash动画文件\n导出为Flash动画文件"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏系统工具栏\n显隐系统工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+    IDS_LOGO_URL            "http://images.joyo.com/a/ads_bu_0822_es.swf"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_HIDDEN_FILES    "显示隐藏文件\n显示隐藏文件"
+    ID_ZOOM_IN              "图象放大显示\n放大"
+    ID_ZOOM_OUT             "图象缩小显示\n缩小"
+    ID_ACTUAL_SIZE          "图象实际尺寸显示\n实际尺寸"
+    ID_FILE_OPTION          "修改系统配置\n系统配置"
+    ID_VIEW_BACK            "转到上一页\n后退"
+    ID_VIEW_NEXT            "转到下一页\n前进"
+    ID_FULL_SCREEN          "图象全屏显示\n全屏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FRAME_REWIND         "跳至动画首帧\n首帧"
+    ID_FRAME_BACK           "跳至上一帧\n上一帧"
+    ID_FRAME_FORWARD        "跳至下一帧\n下一帧"
+    ID_HELP_MANUAL          "用户帮助手册\n用户帮助手册"
+    ID_LOW_QUALITY          "低质量画面\n低质量"
+    ID_EXACT_IT             "图象拉伸显示\n拉伸显示"
+    ID_MOVIE_LOOP           "循环播放动画\n循环播放"
+    ID_MEDIUM_QUALITY       "中等质量画面\n中等质量"
+    ID_HIGH_QUALITY         "高质量画面\n高质量"
+    ID_FILE_SAVE_NOW        "快速保存动画文件\n快速保存"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_FLASH_ONLY      "仅显示Flash动画文件\n仅显示动画文件"
+    ID_MOVIE_QUALITY        "设置画面质量\n画面质量"
+    ID_FILE_EXPORT          "导出动画文件为FlashNow! 应用\n导出FlashNow! 应用"
+    ID_VIEW_THUMBNAIL       "拇指图显示\n拇指图"
+    ID_FILE_SERIALIZE       "文件名序列化更名\n文件名序列化"
+    ID_FILE_EXPORT_FLASHNOW "导出为FlashNow! 应用程序\n导出为FlashNow! 应用程序"
+    ID_FILE_EXPORT_SCREEN_SAVER "导出为屏幕保护程序\n导出为屏幕保护程序"
+    ID_FILE_EXPORT_FLASHPLAYER 
+                            "导出为FlashPlayer应用程序\n导出为FlashPlayer应用程序"
+    ID_FILE_EXPORT_FLASH    "导出为Flash动画文件\n导出为Flash动画文件"
+    ID_FILE_EXPORT_HTML     "导出为HTML文件\n导出为HTML文件"
+    ID_OCX_REGISTER         "注册SWFlash控件(中文版)\n注册SWFlash控件(中文版)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SCREEN_CAPTURE       "从屏幕上抓取Flash动画\nFlash屏幕抓取"
+    ID_MOVIE_BROWSE         "切换至浏览模式\n浏览模式"
+    ID_LOG_BAR              "关闭广告条\n关闭广告条"
+    ID_TOOL_SETUP           "修改系统设置\n系统设置"
+    ID_MOVIE_PLAY           "播放动画\n播放"
+    ID_MOVIE_STOP           "停止播放动画\n停止"
+    ID_VIEW_THUMBNAILS      "拇指图显示\n拇指图"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_SMALLICON       "小图标显示\n小图标"
+    ID_VIEW_LARGEICON       "大图标显示\n大图标"
+    ID_VIEW_LIST            "列表显示\n列表"
+    ID_VIEW_DETAILS         "详细资料显示\n详细资料"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_UP              "返回至上一级目录\n上一级目录"
+    ID_FILE_EXPAND          "打开文件夹\n打开"
+    ID_FILE_DELETE          "删除文件\n删除"
+    ID_FILE_RENAME          "更改文件名\n更改文件名"
+    ID_FILE_VIEW            "查看动画文件\n查看"
+    ID_SLIDE_SHOW           "自动顺序播放\n顺序播放"
+    ID_SHOW_ALL             "图象全部显示\n全部显示"
+    ID_FRAME_END            "跳至动画尾帧\n尾帧"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_PROPERTY        "查看文件属性\n文件属性"
+    ID_BACK_COLOR           "设置动画背景色\n背景色"
+    ID_MOVIE_BACK           "查看上一幅动画文件\n上一副"
+    ID_MOVIE_FORWARD        "查看下一幅动画文件\n下一副"
+    ID_VIEW_REFRESH         "刷新显示\n刷新"
+    ID_MOVIE_VIEW           "切换至视图模式\n视图模式"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HTML_TEMPLATE       "<html>\r\n\r\n<head>\r\n<!--Created by FlashNow1.05.20,%04d-%02d-%02d %02d:%02d--!>\r\n<title>%s</title>\r\n</head>\r\n\r\n<body>\r\n\r\n<p align=""center"">\r\n <object classid=""clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"" codeBase=""http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"" height=""452"" width=""742"">\r\n  <param name=""Src"" value=""%s"">\r\n  <param name=""WMode"" value=""%s"">\r\n  <param name=""Loop"" value=""%d"">\r\n  <param name=""Quality"" value=""%s"">\r\n  <param name=""Scale"" value=""%s"">\r\n  <param name=""DeviceFont"" value=""0"">\r\n  <param name=""EmbedMovie"" value=""0"">\r\n  <param name=""BGColor"" value=""%s"">\r\n </object>\r\n</p>\r\n\r\n</body>\r\n</html>"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MOVIE_TAIL           "查看最后一副动画\n最后一副"
+    ID_MOVIE_HEAD           "查看第一副动画\n第一副"
+    ID_HELP_PRODUCT         "FlashNow! 产品介绍\nFlashNow! 产品介绍"
+    ID_SEND_SUGGESTION      "发送用户建议\n发送用户建议"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_VIEWER              "FlashNow! 动画查看器"
+    IDR_BROWSER             "FlashNow! 动画浏览器"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\FlashNow.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

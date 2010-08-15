@@ -1,0 +1,375 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FakeQQ.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_FACE0               ICON    DISCARDABLE     "res\\face5.ico"
+IDI_FACE1               ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_FACE2               ICON    DISCARDABLE     "res\\face2.ico"
+IDI_FACE3               ICON    DISCARDABLE     "res\\face3.ico"
+IDI_FACE4               ICON    DISCARDABLE     "res\\face4.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 FakeQQ"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDI_FACE0,IDC_STATIC,11,12,20,20,0,WS_EX_STATICEDGE
+    LTEXT           "FakeQQ 1.0 版",IDC_STATIC,47,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2002 白乔制作",IDC_STATIC,47,21,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "E-mail:bluejoe@etang.com",IDC_STATIC,47,32,119,8,
+                    SS_NOPREFIX
+END
+
+IDD_FAKEQQ_DIALOG DIALOGEX 0, 0, 54, 235
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "FakeQQ"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TOOLBAR_PANE,"Static",SS_ENHMETAFILE | NOT 
+                    WS_VISIBLE,0,2,54,15,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_GROUP_BOX,0,201,54,34,WS_GROUP
+    CTEXT           "00:00:00",IDC_ELAPSE,11,219,32,8
+    CTEXT           "白乔制作",IDC_COPYRIGHT,3,209,47,8
+    CONTROL         "List1",IDC_USER_LIST,"SysListView32",LVS_SINGLESEL | 
+                    LVS_NOSCROLL | WS_BORDER | WS_TABSTOP,0,19,54,184
+END
+
+IDD_REPLY_MSG_DLG DIALOGEX 0, 0, 266, 169
+STYLE DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "查看消息"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "(&R)回讯息",IDOK,149,151,52,14
+    PUSHBUTTON      "关闭",IDCANCEL,212,151,52,14
+    GROUPBOX        "来自",IDC_STATIC,0,0,266,40
+    LTEXT           "昵称:",IDC_STATIC,9,11,20,8
+    LTEXT           "",IDC_USER_NAME,32,9,57,12,0,WS_EX_STATICEDGE
+    CONTROL         "发送时间:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,98,26,43,8
+    LTEXT           "",IDC_MSG_TIME,141,24,90,12,0,WS_EX_STATICEDGE
+    EDITTEXT        ID_CHAT_MSG,0,44,266,99,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY,WS_EX_CLIENTEDGE
+    LTEXT           "来源地址:",IDC_STATIC,98,11,39,8
+    LTEXT           "",IDC_ADDRESS,141,9,90,12,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "",IDC_USER_FACE,235,9,28,27,BS_ICON,WS_EX_CLIENTEDGE
+    LTEXT           "Enter 回复消息，ESC 忽略消息",IDC_STATIC,2,155,135,10
+END
+
+IDD_SEND_MSG_DLG DIALOGEX 0, 0, 266, 169
+STYLE DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "发送消息"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "(&R)发送讯息",ID_SEND_MSG,149,151,52,14
+    PUSHBUTTON      "关闭",IDCANCEL,212,151,52,14
+    GROUPBOX        "来自",IDC_STATIC,0,0,266,40
+    LTEXT           "昵称:",IDC_STATIC,9,11,20,8
+    LTEXT           "",IDC_LOGIN_NAME,32,9,57,12,0,WS_EX_STATICEDGE
+    CONTROL         "目的地址:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,96,26,39,8
+    EDITTEXT        IDC_CHAT_MSG,0,44,266,99,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_WANTRETURN,WS_EX_CLIENTEDGE
+    LTEXT           "本地地址:",IDC_STATIC,96,11,39,8
+    LTEXT           "",IDC_LOCAL_IP,135,9,62,12,0,WS_EX_STATICEDGE
+    LTEXT           "Ctrl+Enter 发送消息，ESC 忽略消息",IDC_STATIC,2,155,139,
+                    10
+    LTEXT           "好友:",IDC_STATIC,9,26,20,8
+    LTEXT           "",IDC_TO_USER,32,24,57,12,0,WS_EX_STATICEDGE
+    LTEXT           "端口:",IDC_STATIC,205,11,20,8
+    LTEXT           "",IDC_UDP_PORT,229,9,26,12,0,WS_EX_STATICEDGE
+    LTEXT           "端口:",IDC_STATIC,205,26,20,8
+    EDITTEXT        IDC_TO_IP,135,23,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TO_PORT,229,23,26,14,ES_AUTOHSCROLL
+END
+
+IDD_LOGIN_DLG DIALOGEX 0, 0, 215, 95
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "用户登录"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_LOGIN_NAME,71,11,50,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_FACE_LIST,71,29,50,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_UDP_PORT,158,47,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOCAL_IP,29,47,92,14,ES_AUTOHSCROLL | ES_READONLY
+    DEFPUSHBUTTON   "确定",IDOK,36,73,44,15
+    PUSHBUTTON      "取消",IDCANCEL,127,73,44,15
+    LTEXT           "用户昵称:",IDC_STATIC,29,15,39,8
+    ICON            IDI_FACE0,IDC_USER_FACE,161,11,20,20,0,WS_EX_STATICEDGE
+    LTEXT           "端口:",IDC_STATIC,131,51,20,8
+    LTEXT           "选择头像:",IDC_STATIC,29,32,39,8
+END
+
+IDD_VIEW_LOG DIALOGEX 0, 0, 280, 257
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查看历史记录"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,223,238,50,14,WS_GROUP
+    CONTROL         "List1",IDC_LOG_LIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,266,112
+    GROUPBOX        "查看讯息内容",IDC_STATIC,7,122,266,112
+    EDITTEXT        ID_CHAT_MSG,12,173,255,54,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY,WS_EX_CLIENTEDGE
+    LTEXT           "昵称:",IDC_STATIC,14,140,20,8
+    LTEXT           "",IDC_USER_NAME,36,138,57,12,0,WS_EX_STATICEDGE
+    CONTROL         "接收时间:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,102,154,43,8
+    LTEXT           "",IDC_MSG_TIME,146,152,90,12,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "",IDC_USER_FACE,239,138,28,27,BS_ICON,WS_EX_CLIENTEDGE
+    LTEXT           "来源地址:",IDC_STATIC,102,140,39,8
+    LTEXT           "",IDC_ADDRESS,146,138,90,12,0,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "清空记录",ID_CLEAR_LOG,145,238,50,14,WS_GROUP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "FakeQQ Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "FakeQQ\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "FakeQQ.EXE\0"
+            VALUE "ProductName", "FakeQQ 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_FAKEQQ_DIALOG, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+    END
+
+    IDD_VIEW_LOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 252
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_VIEW_LOG
+    BUTTON      ID_HIDE_WINDOW
+    BUTTON      ID_SCROLL_UP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR             BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "Pop"
+    BEGIN
+        MENUITEM "显示窗口(&S)",                ID_SHOW_WINDOW
+        MENUITEM "隐藏窗口(&H)",                ID_HIDE_WINDOW
+        MENUITEM "显示消息(&A)...",             ID_SHOW_LAST_CHAT
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LOGIN_DLG DLGINIT
+BEGIN
+    IDC_FACE_LIST, 0x403, 5, 0
+0xf3c6, 0xecb6, "\000" 
+    IDC_FACE_LIST, 0x403, 9, 0
+0xa4b3, 0xa2b7, 0xc0c3, 0xaec5, "\000" 
+    IDC_FACE_LIST, 0x403, 9, 0
+0xb5c9, 0xb0c3, 0xe7b8, 0xe7b8, "\000" 
+    IDC_FACE_LIST, 0x403, 9, 0
+0xf3b4, 0xdbd1, 0xc0c3, 0xbcc3, "\000" 
+    IDC_FACE_LIST, 0x403, 9, 0
+0xacb3, 0xb6bc, 0xa7cb, 0xe7b8, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 FakeQQ(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows 通信端口初始化失败。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SEND_MSG             "发送讯息\n\n发送讯息"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\FakeQQ.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

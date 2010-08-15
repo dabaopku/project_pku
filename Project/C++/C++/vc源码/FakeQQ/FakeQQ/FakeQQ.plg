@@ -1,0 +1,43 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: FakeQQ - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\bluejoe\LOCALS~1\Temp\RSP7.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/FakeQQ.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\bluejoe\e\Visual Studio Projects\FakeQQ\FakeQQDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\bluejoe\LOCALS~1\Temp\RSP7.tmp" 
+Creating temporary file "C:\DOCUME~1\bluejoe\LOCALS~1\Temp\RSP8.tmp" with contents
+[
+Winmm.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/FakeQQ.pdb" /machine:I386 /out:"Release/FakeQQ.exe" 
+".\Release\ChatRecordSet.obj"
+".\Release\ChatSocket.obj"
+".\Release\FakeQQ.obj"
+".\Release\FakeQQDlg.obj"
+".\Release\LoginDlg.obj"
+".\Release\MsgInfo.obj"
+".\Release\ReplyMsgDlg.obj"
+".\Release\SendMsgDlg.obj"
+".\Release\StdAfx.obj"
+".\Release\UserInfo.obj"
+".\Release\ViewLogDlg.obj"
+".\Release\FakeQQ.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\bluejoe\LOCALS~1\Temp\RSP8.tmp"
+<h3>Output Window</h3>
+Compiling...
+FakeQQDlg.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+FakeQQ.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

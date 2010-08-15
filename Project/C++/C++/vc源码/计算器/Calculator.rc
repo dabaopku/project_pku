@@ -1,0 +1,321 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Calculator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\mfccalc.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\AI361Game.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    ICON            IDI_ICON1,IDC_STATIC,7,7,21,21
+    LTEXT           "Calculator 1.0 版",IDC_STATIC,40,10,119,11,SS_NOPREFIX
+    LTEXT           "版权所有 Lex@YSSY(C) 2004.03.28",IDC_STATIC,40,25,138,
+                    11
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_CALCULATOR_DIALOG DIALOGEX 0, 0, 203, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Calculator"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,5,187,16,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,5,23,189,22
+    EDITTEXT        IDC_EDIT_PUTOUT,7,5,187,16,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER,WS_EX_RIGHT
+    CONTROL         "1",IDC_NUMBER1,"Button",BS_OWNERDRAW | WS_TABSTOP,9,123,
+                    24,20
+    CONTROL         "2",IDC_NUMBER2,"Button",BS_OWNERDRAW | WS_TABSTOP,36,
+                    123,24,20
+    CONTROL         "3",IDC_NUMBER3,"Button",BS_OWNERDRAW | WS_TABSTOP,63,
+                    123,24,20
+    CONTROL         "4",IDC_NUMBER4,"Button",BS_OWNERDRAW | WS_TABSTOP,9,100,
+                    24,20
+    CONTROL         "5",IDC_NUMBER5,"Button",BS_OWNERDRAW | WS_TABSTOP,36,
+                    100,24,20
+    CONTROL         "6",IDC_NUMBER6,"Button",BS_OWNERDRAW | WS_TABSTOP,63,
+                    100,24,20
+    CONTROL         "7",IDC_NUMBER7,"Button",BS_OWNERDRAW | WS_TABSTOP,9,77,
+                    24,20
+    CONTROL         "8",IDC_NUMBER8,"Button",BS_OWNERDRAW | WS_TABSTOP,36,77,
+                    24,20
+    CONTROL         "9",IDC_NUMBER9,"Button",BS_OWNERDRAW | WS_TABSTOP,63,77,
+                    24,20
+    CONTROL         "0",IDC_NUMBER10,"Button",BS_OWNERDRAW | WS_TABSTOP,9,
+                    146,24,20
+    CONTROL         "+/-",IDC_OPERATION1,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    36,146,24,20
+    CONTROL         "BackSpace",IDC_OPERATION2,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,65,53,49,20
+    CONTROL         "/",IDC_OPERATION3,"Button",BS_OWNERDRAW | WS_TABSTOP,90,
+                    77,24,20
+    CONTROL         "*",IDC_OPERATION4,"Button",BS_OWNERDRAW | WS_TABSTOP,90,
+                    100,24,20
+    CONTROL         "+",IDC_OPERATION5,"Button",BS_OWNERDRAW | WS_TABSTOP,90,
+                    146,24,20
+    CONTROL         "-",IDC_OPERATION6,"Button",BS_OWNERDRAW | WS_TABSTOP,90,
+                    123,24,20
+    CONTROL         "C",IDC_OPERATION7,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    144,53,24,20
+    CONTROL         "Sqrt",IDC_OPERATION8,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    117,123,24,20
+    CONTROL         "1/X",IDC_OPERATION9,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    171,100,24,20
+    CONTROL         "=",IDC_OPERATION20,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    171,169,24,20
+    CONTROL         "A",IDC_CHAR1,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,9,169,24,20
+    CONTROL         "B",IDC_CHAR2,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,36,169,24,20
+    CONTROL         "C",IDC_CHAR3,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,63,169,24,20
+    CONTROL         "E",IDC_CHAR5,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,117,169,24,20
+    CONTROL         "F",IDC_CHAR6,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,144,169,24,20
+    CONTROL         "十六进制",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,11,31,
+                    47,10
+    CONTROL         "十进制",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,57,31,47,
+                    10
+    CONTROL         "八进制",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,103,31,
+                    47,10
+    CONTROL         "二进制",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,149,31,
+                    40,10
+    CONTROL         "D",IDC_CHAR4,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,90,169,24,20
+    CONTROL         ".",IDC_OPERATION19,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    63,146,24,20
+    CONTROL         "（",IDC_OPERATION16,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    117,77,24,20
+    CONTROL         "）",IDC_OPERATION17,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    144,77,24,20
+    CONTROL         "n!",IDC_OPERATION11,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    171,77,24,20
+    CONTROL         "pi",IDC_OPERATION21,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    171,123,24,20
+    CONTROL         "GM",IDC_OPERATION22,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    171,146,24,20
+    CONTROL         "x^y",IDC_OPERATION12,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    144,146,24,20
+    CONTROL         "x^3",IDC_OPERATION10,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    117,146,24,20
+    CONTROL         "x^2",IDC_OPERATION13,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    144,123,24,20
+    CONTROL         "Mod",IDC_OPERATION14,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    117,100,24,20
+    CONTROL         "Log",IDC_OPERATION15,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    144,100,24,20
+    CONTROL         "CE",IDC_OPERATION18,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    117,53,24,20
+    CONTROL         "OFF",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,171,53,24,
+                    20
+    EDITTEXT        IDC_EDIT2,7,53,47,16,ES_AUTOHSCROLL | NOT WS_VISIBLE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Calculator Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Calculator\0"
+            VALUE "LegalCopyright", "版权所有 (C) 1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Calculator.EXE\0"
+            VALUE "ProductName", "Calculator 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&Skin"
+    BEGIN
+        MENUITEM "Load Skin",                   IDM_LOADSKIN
+    END
+    POPUP "&Option"
+    BEGIN
+        MENUITEM "&Expression",                 ID_OPT_EXP
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Calculator ...",       ID_APP_ABOUT
+    END
+END
+
+IDR_POPUPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "Load Skin",                   IDM_ITEM11
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Calculator(&A)..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OPT_EXP              "表达式计算"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Calculator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

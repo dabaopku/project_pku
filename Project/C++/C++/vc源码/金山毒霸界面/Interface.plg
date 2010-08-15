@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Interface - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Interface.res" /d "NDEBUG" "G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\Interface.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6A.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/Interface.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\ColorButton.cpp"
+"G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\ColorStatic.cpp"
+"G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\HYPERLINK.CPP"
+"G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\Interface.cpp"
+"G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\InterfaceDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6B.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/Interface.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"G:\storage\download\资料\程序\vc\范例代码\界面\毒霸界面\DUBAInterface\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Interface.pdb" /machine:I386 /out:"Release/Interface.exe" 
+".\Release\ColorButton.obj"
+".\Release\ColorStatic.obj"
+".\Release\HYPERLINK.OBJ"
+".\Release\Interface.obj"
+".\Release\InterfaceDlg.obj"
+".\Release\StdAfx.obj"
+".\Release\Interface.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ColorButton.cpp
+ColorStatic.cpp
+HYPERLINK.CPP
+Interface.cpp
+InterfaceDlg.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Interface.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

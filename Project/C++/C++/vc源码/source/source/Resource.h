@@ -1,0 +1,121 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by FlashNow.rc
+//
+#define ID_HTML_SAVE                    3
+#define IDD_ABOUTBOX                    100
+#define ID_END_FULL_SCREEN              103
+#define IDR_SHELL_LIST                  105
+#define IDR_SHELL_TREE                  106
+#define IDR_VIEWER                      128
+#define IDM_VIEWER                      128
+#define IDD_VIEWER                      128
+#define IDA_FLASHNOW                    128
+#define IDB_CAPTION                     130
+#define IDI_VIEWER                      133
+#define IDI_BROWSER                     134
+#define IDR_FLASH                       135
+#define IDR_BROWSER                     136
+#define IDM_BROWSER                     136
+#define IDM_QUALITY_POP                 137
+#define IDD_PROPERTY                    139
+#define IDD_SETUP                       140
+#define IDD_2HTML                       141
+#define IDM_NAVIGATOR_POP               142
+#define IDD_FILE_OPEN                   143
+#define IDM_LIST_POP                    145
+#define IDM_EXPORT_POP                  146
+#define IDM_ITEM_POP                    147
+#define IDM_SAVEPATH_POP                149
+#define ID_HTML_COPY                    1000
+#define IDC_CONTAINER                   1003
+#define IDC_URL_LIST                    1013
+#define IDC_FRAME_SLIDER                1014
+#define IDC_DOUBLECLICK_ENABLE          1021
+#define IDC_MOVIE_LOOP                  1022
+#define IDC_SLIDE_SHOW                  1023
+#define IDC_SHOW_ABOUT                  1024
+#define IDC_FILENAME                    1026
+#define IDC_HTML_CODE                   1027
+#define IDC_FILESIZE                    1027
+#define IDC_CREATETIME                  1028
+#define IDC_MODIFYTIME                  1029
+#define IDC_TOTALFRAMES                 1030
+#define IDC_PREVIEW_SCREEN              1039
+#define IDC_MOVIE_PATH                  1041
+#define IDC_ELAPSE                      1042
+#define IDC_HTML_TITLE                  1044
+#define IDC_DELETE_ITEM                 1049
+#define IDC_CLEAR_ALL                   1050
+#define ID_HTML_PREVIEW                 1089
+#define ID_VIEW_HIDDEN_FILES            32771
+#define ID_ZOOM_IN                      32772
+#define ID_ZOOM_OUT                     32773
+#define ID_ACTUAL_SIZE                  32774
+#define ID_FILE_OPTION                  32775
+#define ID_VIEW_BACK                    32776
+#define ID_VIEW_NEXT                    32777
+#define ID_FULL_SCREEN                  32782
+#define ID_FRAME_REWIND                 32785
+#define ID_FRAME_BACK                   32786
+#define ID_FRAME_FORWARD                32787
+#define ID_HELP_MANUAL                  32788
+#define ID_LOW_QUALITY                  32789
+#define ID_EXACT_IT                     32790
+#define ID_MOVIE_LOOP                   32792
+#define ID_MEDIUM_QUALITY               32793
+#define ID_HIGH_QUALITY                 32794
+#define ID_FILE_SAVE_NOW                32798
+#define ID_VIEW_FLASH_ONLY              32800
+#define ID_MOVIE_QUALITY                32801
+#define ID_FILE_EXPORT                  32802
+#define ID_VIEW_THUMBNAIL               32803
+#define ID_FILE_SERIALIZE               32805
+#define ID_FILE_EXPORT_FLASHNOW         32806
+#define ID_FILE_EXPORT_SCREEN_SAVER     32807
+#define ID_FILE_EXPORT_FLASHPLAYER      32808
+#define ID_FILE_EXPORT_FLASH            32810
+#define ID_FILE_EXPORT_HTML             32812
+#define ID_OCX_REGISTER                 32814
+#define ID_SCREEN_CAPTURE               32816
+#define ID_MOVIE_BROWSE                 32817
+#define ID_LOG_BAR                      32821
+#define ID_TOOL_SETUP                   32822
+#define ID_MOVIE_PLAY                   32823
+#define ID_MOVIE_STOP                   32824
+#define ID_VIEW_THUMBNAILS              32828
+#define ID_FILE_UP                      32832
+#define ID_FILE_EXPAND                  32834
+#define ID_FILE_DELETE                  32835
+#define ID_FILE_RENAME                  32836
+#define ID_FILE_VIEW                    32837
+#define ID_SLIDE_SHOW                   32839
+#define ID_SHOW_ALL                     32844
+#define ID_FRAME_END                    32845
+#define ID_FILE_PROPERTY                32850
+#define ID_BACK_COLOR                   32854
+#define ID_MOVIE_BACK                   32855
+#define ID_MOVIE_FORWARD                32856
+#define ID_VIEW_REFRESH                 32861
+#define ID_MOVIE_VIEW                   32863
+#define ID_MOVIE_TAIL                   32864
+#define ID_MOVIE_HEAD                   32865
+#define ID_HELP_PRODUCT                 32869
+#define ID_SEND_SUGGESTION              32870
+#define ID_INDICATOR_LOADED             59144
+#define ID_INDICATOR_CURRENTFRAME       59145
+#define ID_INDICATOR_FRAMES             59146
+#define IDS_HTML_TEMPLATE               61180
+#define IDS_LOGO_URL                    61204
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_3D_CONTROLS                     1
+#define _APS_NEXT_RESOURCE_VALUE        150
+#define _APS_NEXT_COMMAND_VALUE         32825
+#define _APS_NEXT_CONTROL_VALUE         1008
+#define _APS_NEXT_SYMED_VALUE           110
+#endif
+#endif

@@ -1,0 +1,232 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Interface.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Interface.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 Interface"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Interface 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_INTERFACE_DIALOG DIALOGEX 0, 0, 392, 235
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_BITMAPBTN,"Button",BS_OWNERDRAW | BS_BITMAP | BS_LEFT | BS_TOP | WS_TABSTOP,267,36,30,22
+    CONTROL         "",IDC_CLOSEBTN,"Button",BS_OWNERDRAW | BS_BITMAP | WS_TABSTOP,375,0,15,14,WS_EX_TRANSPARENT
+    CONTROL         "扫描路径：",IDC_STATIC10,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,35,40,8,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT1,54,32,199,13,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_STATICEDGE
+    CONTROL         "扫描内存",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,66,51,48,10,WS_EX_TRANSPARENT
+    CONTROL         "自动清除",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,132,51,48,10
+    CONTROL         "扫描子目录",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,198,51,56,10
+    CONTROL         "扫描状态：",IDC_STATIC9,"Static",SS_SIMPLE | WS_GROUP,7,72,41,9,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC8,51,72,246,9,SS_SUNKEN,WS_EX_TRANSPARENT
+    LTEXT           "总文件数：",IDC_STATIC4,7,87,41,8
+    LTEXT           "病毒数：",IDC_STATIC5,99,87,33,8
+    LTEXT           "清除数：",IDC_STATIC6,183,87,33,8
+    LTEXT           "错误数：",IDC_STATIC7,267,87,33,8
+    CONTROL         "",IDC_STARTBTN,"Button",BS_OWNERDRAW | BS_BITMAP | WS_TABSTOP,312,31,73,51
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_TABSTOP,7,107,378,67
+    LTEXT           "金山毒霸对该病毒的解决方案",IDC_STATIC1,15,194,105,8
+    LTEXT           "网易病毒预警短信",IDC_STATIC3,306,221,65,8
+    CONTROL         "Button1",IDC_HOMEBTN,"Button",BS_OWNERDRAW | BS_BITMAP | WS_TABSTOP,358,0,15,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "Interface Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Interface"
+            VALUE "LegalCopyright", "版权所有 (C) 2002"
+            VALUE "OriginalFilename", "Interface.EXE"
+            VALUE "ProductName", "Interface 应用程序"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_INTERFACE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 385
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAPNORMAL        BITMAP                  "129.bmp"
+IDB_BITMAPSEL           BITMAP                  "128.bmp"
+IDB_BITMAPBACKGROUND    BITMAP                  "background.bmp"
+IDB_BITMAPDOWN          BITMAP                  "116.bmp"
+IDB_BITMAPON            BITMAP                  "115.bmp"
+IDB_BITMAPCLOSENORMAL   BITMAP                  "114.bmp"
+IDB_BITMAPOFFDOWN       BITMAP                  "125.bmp"
+IDB_BITMAPONDOWN        BITMAP                  "123.bmp"
+IDB_BITMAPONNORMAL      BITMAP                  "131.bmp"
+IDB_BITMAPOFFNORMAL     BITMAP                  "132.bmp"
+IDB_BITMAPHOMENORMAL    BITMAP                  "119.bmp"
+IDB_BITMAPHOMEDOWN      BITMAP                  "117.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Interface(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Interface.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
