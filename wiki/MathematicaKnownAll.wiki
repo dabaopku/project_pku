@@ -1,0 +1,24 @@
+#summary One-sentence summary of this page.
+=Mathematica智多星=
+= 介绍 =
+
+本文根据作者长期以及今后帮助别人实现mathematica特定功能的经历整理下来的，希望对学习mathematica，使用mathematica的朋友有所帮助。
+
+
+= 内容 =
+
+== Ques1 ==
+使用NMaxize求解最大值出现复数域错误怎么办？
+比如：
+{{{
+NMaximize[Log[x]/x, x]
+}}}
+出错结果为：
+{{{
+NMaximize::nrnum: The function value 1.238756083919684`+6.005759913982358`I is not a real number at {x} = {-0.5230966103516175`}
+}}}
+=== Ans ===
+{{{
+
+ToReal[x_] := If[Im[x] != 0, 0, x]
+}}}
